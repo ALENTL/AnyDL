@@ -4,7 +4,7 @@ Source Code: https://github.com/ALENTL/AnyDL
 © @AnyDLBot"""
     RENAME_403_ERR = "Sorry. You are not permitted to rename this file."
     ABS_TEXT = " Please don't be selfish."
-    UPGRADE_TEXT = "Your Telegram ID: 1312054275
+    UPGRADE_TEXT = "Your Telegram ID: {ID}
 @@Youtube_Youtube_downloaderbot
 -------
 Plan: FREE
