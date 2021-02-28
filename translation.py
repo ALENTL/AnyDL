@@ -4,8 +4,7 @@ Source Code: https://github.com/ALENTL/AnyDL
 © Youtube_Youtube_downloaderbot"""
     RENAME_403_ERR = "Sorry. You are not permitted to rename this file."
     ABS_TEXT = " Please don't be selfish."
-    UPGRADE_TEXT = """Your Telegram ID: <code>{}</code>
-@Youtube_Youtube_downloaderbot Paid Plans
+    UPGRADE_TEXT = """@Youtube_Youtube_downloaderbot Paid Plans
 -------
 Plan: FREE
 Filesize limit: 1500 MB
@@ -48,7 +47,7 @@ FEATURES:
 -------
 @Youtube_Youtube_downloaderbot reserves the rights to change the benefits of plans, at anytime.
 -------
-NOTE: After payment you must take screenshot of receipt and send to @ShriMADhaBot with your Telegram ID obtained from /me
+NOTE: After payment you must take screenshot of receipt and send to @ALEN_TL with your Telegram ID obtained from /me
 Please Message from the ID you want plan to be activated 🙏"""
 
     FORMAT_SELECTION = "Select the desired format: <a href='{}'>file size might be approximate</a> \nIf you want to set custom thumbnail, send photo before or quickly after tapping on any of the below buttons.\nYou can use /deletethumbnail to delete the auto-generated thumbnail."
