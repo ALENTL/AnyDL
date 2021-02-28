@@ -4,10 +4,55 @@ Source Code: https://github.com/ALENTL/AnyDL
 © Youtube_Youtube_downloaderbot"""
     RENAME_403_ERR = "Sorry. You are not permitted to rename this file."
     ABS_TEXT = " Please don't be selfish."
-    UPGRADE_TEXT = "For @Youtube_Youtube_downloaderbot Paid Plans visit [My Support Channel](https://t.me/thanks2telegram/3)" 
+    UPGRADE_TEXT = """Your Telegram ID: <code>{}</code>
+@Youtube_Youtube_downloaderbot Paid Plans
+-------
+Plan: FREE
+Filesize limit: 1500 MB
+Daily limit: UNLIMITED
+Price 🌎: ₹ 0 / 30 Days
+FEATURES:
+👉 Get a Telegram sticker as a Telegram downloadable media (https://t.me/SpEcHlDe/660)
+👉 Get Low Speed Direct Download Link of any Telegram file (https://t.me/SpEcHlDe/611)
+-------
+Plan: B
+Filesize limit: 1500 MB
+Daily limit: UNLIMITED
+Price 🇮🇳: ₹ 38 / 28 Days
+
+FEATURES:
+👉 All Above Features +
+👉 All Supported Video Formats of https://rg3.github.io/youtube-dl/supportedsites.html, except HLS videos! (https://t.me/SpEcHlDe/608)
+👉 Upload as file from any HTTP link, with custom thumbnail support (https://t.me/SpEcHlDe/609)
+-------
+Plan: C
+Filesize limit: 1500 MB
+Daily limit: UNLIMITED
+
+FEATURES:
+👉 All Above Features +
+👉 Convert To Telegram Audio, the media sent as Telegram Documents (https://telegram.dog/AnyDLBot)
+👉 Convert To Streamable Video, any Telegram file (https://telegram.dog/AnyDLBot)
+👉 ReName Telegram files, with custom thumbnail support (https://t.me/SpEcHlDe/610)
+-------
+Plan: D
+Filesize limit: 1500 MB
+Daily limit: UNLIMITED
+
+FEATURES:
+👉 All Above Features +
+👉 Generate Custom Thumbnail by sending two photos in a Media Album (https://t.me/SpEcHlDe/625)
+👉 Trim large videos (https://t.me/SpEcHlDe/653), and Take Screenshots (https://t.me/SpEcHlDe/652) of Telegram media files.
+👉 Extract compressed Telegram media (https://t.me/SpEcHlDe/657)
+👉 PLUS, all newly features that are going to be added in the feature*.
+-------
+@Youtube_Youtube_downloaderbot reserves the rights to change the benefits of plans, at anytime.
+-------
+NOTE: After payment you must take screenshot of receipt and send to @ShriMADhaBot with your Telegram ID obtained from /me
+Please Message from the ID you want plan to be activated 🙏"""
+
     FORMAT_SELECTION = "Select the desired format: <a href='{}'>file size might be approximate</a> \nIf you want to set custom thumbnail, send photo before or quickly after tapping on any of the below buttons.\nYou can use /deletethumbnail to delete the auto-generated thumbnail."
-    SET_CUSTOM_USERNAME_PASSWORD = """If you want to download premium videos, provide in the following format:
-URL | filename | username | password"""
+    SET_CUSTOM_USERNAME_PASSWORD = """If you want to download premium videos, provide in the following format: URL | filename | username | password"""
     NOYES_URL = "@robot URL detected. Please use https://shrtz.me/PtsVnf6 and get me a fast URL so that I can upload to Telegram, without me slowing down for other users."
     DOWNLOAD_START = "trying to download"
     UPLOAD_START = "trying to upload"
