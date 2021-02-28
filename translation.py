@@ -5,7 +5,7 @@ Source Code: https://github.com/ALENTL/AnyDL
     RENAME_403_ERR = "Sorry. You are not permitted to rename this file."
     ABS_TEXT = " Please don't be selfish."
     UPGRADE_TEXT = "Your Telegram ID: {ID}
-@@Youtube_Youtube_downloaderbot
+@Youtube_Youtube_downloaderbot
 -------
 Plan: FREE
 Filesize limit: 1500 MB
