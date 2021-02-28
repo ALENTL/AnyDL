@@ -1,12 +1,11 @@
 class Translation(object):
     START_TEXT = """This is an @AnyDLBot clone created using the Open Source code available.
 Source Code: https://github.com/ALENTL/AnyDL
-© @AnyDLBot"""
+© Youtube_Youtube_downloaderbot"""
     RENAME_403_ERR = "Sorry. You are not permitted to rename this file."
     ABS_TEXT = " Please don't be selfish."
-    UPGRADE_TEXT = "Your Telegram ID: {ID}
-@Youtube_Youtube_downloaderbot
--------
+    UPGRADE_TEXT = "@Youtube_Youtube_downloaderbot Paid Plans
+------
 Plan: FREE
 Filesize limit: 1500 MB
 Daily limit: UNLIMITED
@@ -45,9 +44,9 @@ FEATURES:
  (https://t.me/SpEcHlDe/625)👉 Trim large videos (https://t.me/SpEcHlDe/653), and Take Screenshots (https://t.me/SpEcHlDe/652) of Telegram media files.
 👉 Extract compressed Telegram media
  (https://t.me/SpEcHlDe/657)👉 PLUS, all newly features that are going to be added in the feature*.
--------
+------
 @Youtube_Youtube_downloaderbot reserves the rights to change the benefits of plans at anytime.
--------
+------
 NOTE: After payment you must take screenshot of receipt and send to @ALEN_TL with your Telegram ID obtained from /me
 🙏 Please Message from the ID you want plan to be activated 🙏!"
     FORMAT_SELECTION = "Select the desired format: <a href='{}'>file size might be approximate</a> \nIf you want to set custom thumbnail, send photo before or quickly after tapping on any of the below buttons.\nYou can use /deletethumbnail to delete the auto-generated thumbnail."
