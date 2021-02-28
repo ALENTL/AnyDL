@@ -27,7 +27,7 @@ from helper_funcs.chat_base import TRChatBase
 from helper_funcs.display_progress import progress_for_pyrogram
 
 
-@pyrogram.Client.on_message(pyrogram.Filters.sticker)
+@pyrogram.Client.on_message(pyrogram.filters.sticker)
 async def DownloadStickersBot(bot, update):
     if update.from_user.id not in Config.AUTH_USERS:
         await bot.delete_messages(

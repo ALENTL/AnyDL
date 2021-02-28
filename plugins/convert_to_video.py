@@ -32,7 +32,7 @@ from hachoir.parser import createParser
 from PIL import Image
 
 
-@pyrogram.Client.on_message(pyrogram.Filters.command(["converttovideo"]))
+@pyrogram.Client.on_message(pyrogram.filters.command(["converttovideo"]))
 async def convert_to_video(bot, update):
     if update.from_user.id not in Config.AUTH_USERS:
         await bot.delete_messages(

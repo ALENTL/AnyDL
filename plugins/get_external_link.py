@@ -30,7 +30,7 @@ from helper_funcs.chat_base import TRChatBase
 from helper_funcs.display_progress import progress_for_pyrogram
 
 
-@pyrogram.Client.on_message(pyrogram.Filters.command(["getlink"]))
+@pyrogram.Client.on_message(pyrogram.filters.command(["getlink"]))
 async def get_link(bot, update):
     if update.from_user.id not in Config.AUTH_USERS:
         await bot.delete_messages(

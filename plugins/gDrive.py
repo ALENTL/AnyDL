@@ -30,7 +30,7 @@ from helper_funcs.display_progress import humanbytes
 from pydrive.auth import GoogleAuth
 
 
-@pyrogram.Client.on_message(pyrogram.Filters.command(["gauth"]))
+@pyrogram.Client.on_message(pyrogram.filters.command(["gauth"]))
 def g_auth(bot, update):
     TRChatBase(update.from_user.id, update.text, "gauth")
     if str(update.from_user.id) not in Config.SUPER7X_DLBOT_USERS:
@@ -50,7 +50,7 @@ def g_auth(bot, update):
     )
 
 
-@pyrogram.Client.on_message(pyrogram.Filters.command(["gsetup"]))
+@pyrogram.Client.on_message(pyrogram.filters.command(["gsetup"]))
 def g_setup(bot, update):
     TRChatBase(update.from_user.id, update.text, "gsetup")
     if str(update.from_user.id) not in Config.SUPER7X_DLBOT_USERS:

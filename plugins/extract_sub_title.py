@@ -44,7 +44,7 @@ def extractsubtitle(video_file, output_directory):
         return None
 
 
-@pyrogram.Client.on_message(pyrogram.Filters.command(["extractsubtitle"]))
+@pyrogram.Client.on_message(pyrogram.filters.command(["extractsubtitle"]))
 def extract_sub_title(bot, update):
     TRChatBase(update.from_user.id, update.text, "extract_sub_title")
     if str(update.from_user.id) not in Config.SUPER7X_DLBOT_USERS:
