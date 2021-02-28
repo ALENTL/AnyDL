@@ -11,7 +11,7 @@ Filesize limit: 1500 MB
 Daily limit: UNLIMITED
 Price 🌎: ₹ 0 / 30 Days
 FEATURES:
-👉 Get a Telegram sticker as a Telegram downloadable media (https://t.me/SpEcHlDe/660)
+👉 [Get a Telegram sticker as a Telegram downloadable media (https://t.me/SpEcHlDe/660)
 👉 Get Low Speed Direct Download Link of any Telegram file (https://t.me/SpEcHlDe/611)
 -------
 Plan: B
