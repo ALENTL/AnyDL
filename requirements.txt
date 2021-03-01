@@ -11,3 +11,5 @@ youtube-dl
 pydrive
 pySmartDL
 hachoir
+sqlalchemy
+psycopg2-binary
