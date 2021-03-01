@@ -6,12 +6,12 @@
 from PIL import Image
 from hachoir.parser import createParser
 from hachoir.metadata import extractMetadata
-from anydlbot.helper_funcs.help_Nekmo_ffmpeg import generate_screen_shots
-from anydlbot.helper_funcs.display_progress import (humanbytes,
+from helper_funcs.help_Nekmo_ffmpeg import generate_screen_shots
+from helper_funcs.display_progress import (humanbytes,
                                                     progress_for_pyrogram)
 from translation import Translation
-from pyrogram import InputMediaPhoto
-from anydlbot import DOWNLOAD_LOCATION, HTTP_PROXY, TG_MAX_FILE_SIZE
+from pyrogram.types import InputMediaPhoto
+from Config import DOWNLOAD_LOCATION, HTTP_PROXY, TG_MAX_FILE_SIZE
 from datetime import datetime
 import time
 import shutil
