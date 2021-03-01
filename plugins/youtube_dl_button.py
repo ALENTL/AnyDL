@@ -215,20 +215,17 @@ async def youtube_dl_call_back(bot, update):
                 if metadata is not None :
                     if metadata.has("duration"):
                         duration = metadata.get('duration').seconds
-                    if metadata.has("width"):
-                        width = metadata.get("width")
-                    if metadata.has("height"):
-                        height = metadata.het("height")
             # get the correct width, height, and duration for videos greater than 10MB
             if os.path.exists(thumb_image_path):
                 width = 0
                 height = 0
                 metadata = extractMetadata(createParser(thumb_image_path))
-                if metadata.has("width"):
+                if metadata is not None :
+                    if metadata.has("width")
                     width = metadata.get("width")
-                if metadata.has("height"):
+                if metadata.has("height") :
                     height = metadata.get("height")
-                if tg_send_type == "vm":
+                if tg_send_type == "vm" :
                     height = width
                 # resize image
                 # ref: https://t.me/PyrogramChat/44663
