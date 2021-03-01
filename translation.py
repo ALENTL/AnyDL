@@ -1,7 +1,10 @@
 class Translation(object):
-    START_TEXT = """This bot was made by @ALEN_TL cloned from @AnyDLBot
-Source Code: https://github.com/ALENTL/AnyDL
-© Youtube_Youtube_downloaderbot"""
+    START_TEXT = """Hi. Thank You for using me.
+/help to know how to use me
+TL;DR, Please send a direct (video) link, and I will try to upload on Telegram.
+© Youtube_Youtube_downloaderbot
+Subscribe @focusgrpchannel if you 💔 using this bot.
+"""
     RENAME_403_ERR = "Sorry. You are not permitted to rename this file."
     ABS_TEXT = " Please don't be selfish."
     UPGRADE_TEXT = """@Youtube_Youtube_downloaderbot Paid Plans
