@@ -11,6 +11,12 @@ from helper_funcs.display_progress import (humanbytes,
                                                     progress_for_pyrogram)
 from translation import Translation
 from pyrogram.types import InputMediaPhoto
+
+if bool(os.environ.get("WEBHOOK", False)):
+    from sample_config import Config
+else:
+    from config import Config
+
 from Config import DOWNLOAD_LOCATION, HTTP_PROXY, TG_MAX_FILE_SIZE
 from datetime import datetime
 import time
@@ -325,9 +331,9 @@ async def youtube_dl_call_back(bot, update):
                 media_album_p = []
                 if images is not None:
                     i = 0
-                    caption = "© @AnyDLBot"
+                    caption = "© @ALEN_TL"
                     if is_w_f:
-                        caption = "/upgrade to Plan D to remove the watermark\n© @AnyDLBot"
+                        caption = "/upgrade to Plan D to remove the watermark\n© @ALEN_TL"
                     for image in images:
                         if os.path.exists(image):
                             if i == 0:
