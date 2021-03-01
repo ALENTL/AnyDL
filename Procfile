@@ -1,1 +1,1 @@
-worker: python3 -m anydlbot
+worker: python3 -m bot.py

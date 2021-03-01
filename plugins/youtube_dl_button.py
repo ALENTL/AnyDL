@@ -12,7 +12,7 @@ from anydlbot.helper_funcs.display_progress import (humanbytes,
                                                     progress_for_pyrogram)
 from translation import Translation
 from pyrogram.types import InputMediaPhoto
-from anydlbot import DOWNLOAD_LOCATION, HTTP_PROXY, TG_MAX_FILE_SIZE
+from config import DOWNLOAD_LOCATION, HTTP_PROXY, TG_MAX_FILE_SIZE
 from datetime import datetime
 import time
 import shutil
