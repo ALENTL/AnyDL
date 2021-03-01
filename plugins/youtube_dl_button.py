@@ -11,12 +11,7 @@ from helper_funcs.display_progress import (humanbytes,
                                                     progress_for_pyrogram)
 from translation import Translation
 from pyrogram.types import InputMediaPhoto
-
-if bool(os.environ.get("WEBHOOK", False)):
-    from sample_config import Config
-else:
-    from config import Config
-
+from config import Config
 from Config import DOWNLOAD_LOCATION, HTTP_PROXY, TG_MAX_FILE_SIZE
 from datetime import datetime
 import time
