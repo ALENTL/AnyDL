@@ -212,8 +212,7 @@ async def youtube_dl_call_back(bot, update):
             duration = 0
             if tg_send_type != "file":
                 metadata = extractMetadata(createParser(download_directory))
-                if metadata is not None:
-                    if metadata.has("duration"):
+                if metadata is not None and if metadata.has("duration"):
                         duration = metadata.get('duration').seconds
             # get the correct width, height, and duration for videos greater than 10MB
             if os.path.exists(thumb_image_path):
@@ -322,9 +321,9 @@ async def youtube_dl_call_back(bot, update):
             media_album_p = []
             if images is not None:
                 i = 0
-                caption = "© @AnyDLBot"
+                caption = "© @ALEN_TL"
                 if is_w_f:
-                    caption = "/upgrade to Plan D to remove the watermark\n© @AnyDLBot"
+                    caption = "/upgrade to Plan D to remove the watermark\n© @ALEN_TL"
                 for image in images:
                     if os.path.exists(image):
                         if i == 0:
