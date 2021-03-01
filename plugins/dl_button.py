@@ -7,43 +7,34 @@ import logging
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
+logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 import asyncio
 import aiohttp
 import json
-import math
 import os
 import shutil
 import time
-from datetime import datetime
 
-# the secret configuration specific things
 if bool(os.environ.get("WEBHOOK", False)):
     from sample_config import Config
 else:
     from config import Config
 
-# the Strings used for this "thing"
-from translation import Translation
-
-import pyrogram
-logging.getLogger("pyrogram").setLevel(logging.WARNING)
-
-from helper_funcs.chat_base import TRChatBase
-from helper_funcs.display_progress import progress_for_pyrogram, humanbytes, TimeFormatter
-from hachoir.metadata import extractMetadata
-from hachoir.parser import createParser
-# https://stackoverflow.com/a/37631799/4723940
 from PIL import Image
+from datetime import datetime
+from hachoir.parser import createParser
+from hachoir.metadata import extractMetadata
+
+from translation import Translation
+from helper_funcs.database import thumb
+from helper_funcs.display_progress import progress_for_pyrogram, humanbytes, TimeFormatter
 
 
 async def ddl_call_back(bot, update):
-    logger.info(update)
     cb_data = update.data
-    # youtube_dl extractors
     tg_send_type, youtube_dl_format, youtube_dl_ext = cb_data.split("=")
-    thumb_image_path = Config.DOWNLOAD_LOCATION + \
-        "/" + str(update.from_user.id) + ".jpg"
+
     youtube_dl_url = update.message.reply_to_message.text
     custom_file_name = os.path.basename(youtube_dl_url)
     if "|" in youtube_dl_url:
@@ -63,9 +54,6 @@ async def ddl_call_back(bot, update):
             youtube_dl_url = youtube_dl_url.strip()
         if custom_file_name is not None:
             custom_file_name = custom_file_name.strip()
-        # https://stackoverflow.com/a/761825/4723940
-        logger.info(youtube_dl_url)
-        logger.info(custom_file_name)
     else:
         for entity in update.message.reply_to_message.entities:
             if entity.type == "text_link":
@@ -117,7 +105,6 @@ async def ddl_call_back(bot, update):
             file_size = os.stat(download_directory).st_size
         except FileNotFoundError as exc:
             download_directory = os.path.splitext(download_directory)[0] + "." + "mkv"
-            # https://stackoverflow.com/a/678242/4723940
             file_size = os.stat(download_directory).st_size
         if file_size > Config.TG_MAX_FILE_SIZE:
             await bot.edit_message_text(
@@ -127,7 +114,6 @@ async def ddl_call_back(bot, update):
             )
         else:
             # get the correct width, height, and duration for videos greater than 10MB
-            # ref: message from @BotSupport
             width = 0
             height = 0
             duration = 0
@@ -136,7 +122,17 @@ async def ddl_call_back(bot, update):
                 if metadata is not None:
                     if metadata.has("duration"):
                         duration = metadata.get('duration').seconds
-            # get the correct width, height, and duration for videos greater than 10MB
+
+            thumb_image_path = Config.DOWNLOAD_LOCATION + \
+                "/" + str(update.from_user.id) + ".jpg"
+
+            if not os.path.exists(thumb_image_path):
+                mes = await thumb(update.from_user.id)
+                if mes != None:
+                    m = await bot.get_messages(update.message.chat.id, mes.msg_id)
+                    await m.download(file_name=thumb_image_path)
+                    thumb_image_path = thumb_image_path
+
             if os.path.exists(thumb_image_path):
                 width = 0
                 height = 0
@@ -147,24 +143,18 @@ async def ddl_call_back(bot, update):
                     height = metadata.get("height")
                 if tg_send_type == "vm":
                     height = width
-                # resize image
-                # ref: https://t.me/PyrogramChat/44663
-                # https://stackoverflow.com/a/21669827/4723940
                 Image.open(thumb_image_path).convert(
                     "RGB").save(thumb_image_path)
                 img = Image.open(thumb_image_path)
-                # https://stackoverflow.com/a/37631799/4723940
-                # img.thumbnail((90, 90))
                 if tg_send_type == "file":
                     img.resize((320, height))
                 else:
                     img.resize((90, height))
                 img.save(thumb_image_path, "JPEG")
-                # https://pillow.readthedocs.io/en/3.1.x/reference/Image.html#create-thumbnails
             else:
                 thumb_image_path = None
+
             start_time = time.time()
-            # try to upload file
             if tg_send_type == "audio":
                 await bot.send_audio(
                     chat_id=update.message.chat.id,
@@ -237,9 +227,12 @@ async def ddl_call_back(bot, update):
             end_two = datetime.now()
             try:
                 os.remove(download_directory)
-                os.remove(thumb_image_path)
             except:
                 pass
+            try:
+                os.remove(thumb_image_path)
+            except:
+                pass            
             time_taken_for_download = (end_one - start).seconds
             time_taken_for_upload = (end_two - end_one).seconds
             await bot.edit_message_text(
